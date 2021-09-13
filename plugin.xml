@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  id="dynatrace-kt"
+  version="1.0.0">
+  <name>Dynatrace-kt</name>
+  <author href="http://heyday.dk">Heyday</author>
+  <description>
+  
+  </description>
+  <repo>https://github.com/Kimtho/dynatrace</repo>
+  <issue>https://github.com/Kimtho/dynatrace/issues</issue>
+  <license>Apache 2.0</license>
+  <keywords>cordova, dynatrace</keywords>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0" />
+  </engines>
+
+  <!-- android -->
+  <platform name="android">
+    <framework src="com.dynatrace.agent:agent-android:8.221.1.1005"/>
+    <source-file src="src/android/DynatraceCordova.java" target-dir="src/dynatrace" />
+     <config-file parent="/*" target="config.xml">
+      <feature name="DynatraceCordovaPlugin">
+        <param name="android-package" value="dynatrace-kt"/>
+      </feature>
+    </config-file>
+
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+   
+  </platform>
+
+  
+
+
+</plugin>
