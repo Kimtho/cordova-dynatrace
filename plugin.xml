@@ -2,9 +2,9 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
   xmlns:android="http://schemas.android.com/apk/res/android"
-  id="dynatrace-kt"
+  id="DynatraceCordova"
   version="1.0.0">
-  <name>Dynatrace-kt</name>
+  <name>DynatraceCordova</name>
   <author href="http://heyday.dk">Heyday</author>
   <description>
   
@@ -17,14 +17,16 @@
   <engines>
     <engine name="cordova" version=">=3.0.0" />
   </engines>
-
+ <js-module src="www/dynatrace.js" name="dynatrace">
+    <merges target="dynatrace" />
+  </js-module>
   <!-- android -->
   <platform name="android">
     <framework src="com.dynatrace.agent:agent-android:8.221.1.1005"/>
     <source-file src="src/android/DynatraceCordova.java" target-dir="src/dynatrace" />
-     <config-file parent="/*" target="config.xml">
-      <feature name="DynatraceCordovaPlugin">
-        <param name="android-package" value="dynatrace-kt"/>
+     <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="dynatracecordova">
+        <param name="android-package" value="dynatracecordova"/>
       </feature>
     </config-file>
 
